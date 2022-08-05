@@ -351,6 +351,8 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     bool    is_ctrl  = (temp_mod | temp_osm) & MOD_MASK_CTRL;
     bool    is_shift = (temp_mod | temp_osm) & MOD_MASK_SHIFT;
 
+    clockwise = !clockwise;
+
     if (is_shift) {
         if (index == 0) { /* First encoder */
             if (clockwise) {
